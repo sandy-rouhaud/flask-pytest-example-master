@@ -26,7 +26,7 @@
 
     - name: Copier (faire un scp) l'archive sur le dossier remote /app
       copy:
-        src: application.tar
+        src: projet_python.tar.gz
         dest: /app
         mode: 0644
 
