@@ -45,7 +45,7 @@
 
 
     - name: On execute le contenur de l'image docker formation/pytest:1.0
-      shell: docker run --rm --name conteneur_app formation/pytest:1.0
+      shell: docker run -p 5000:5000 -d --rm --name conteneur_app formation/pytest:1.0
       #On prend tout ce qui est du stdout et on le met dans la variable result
       register: result
     - debug:
