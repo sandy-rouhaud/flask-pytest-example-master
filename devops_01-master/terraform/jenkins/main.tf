@@ -7,7 +7,7 @@ variable "name" {
 }
 
 resource "aws_instance" "groupe01_01_jenkins" {
-    ami = "ami-04b9e92b5572fa0d1"
+    ami = "ami-00399ec92321828f5"
     instance_type = "t2.micro"
     key_name = "groupe01"
 
