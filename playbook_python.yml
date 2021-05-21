@@ -1,0 +1,52 @@
+- name: Deploy python app
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Installation de Docker et démarrage de docker
+      shell: amazon-linux-extras install -y docker && systemctl start docker
+      register: result_install
+
+    - debug:
+        var=result_install
+
+    - name: Installation de python3
+      shell: amazon-linux-extras install -y python3.8
+      register: result_install
+
+    - debug:
+        var=result_install
+
+    - name: Création du dossier /app_python sur la machine distante
+      file:
+        path: /app_python
+        state: directory
+        mode: 0777
+        owner: ec2-user
+
+    - name: Copier (faire un scp) l'archive sur le dossier remote /app_python
+      copy:
+        src: application.tar
+        dest: /app_python
+        mode: 0644
+
+    - name: "Copier (faire un scp) le fichier local Dockerfile sur le dossier remote /app_python"
+      copy:
+        src: Dockerfile
+        dest: /app_python
+        mode: 0644
+
+    - name: On genere l'image docker, on l'appelle formation/pytest:1.0
+      shell: cd /app_python && docker build -t formation/pytest:1.0 .
+      #On prend tout ce qui est du stdout et on le met dans la variable result
+      register: result
+    - debug:
+        var=result
+
+
+    - name: On execute le contenur de l'image docker formation/pytest:1.0
+      shell: docker run --rm --name conteneur_app formation/pytest:1.0
+      #On prend tout ce qui est du stdout et on le met dans la variable result
+      register: result
+    - debug:
+        var=result
