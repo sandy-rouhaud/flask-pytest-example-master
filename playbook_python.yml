@@ -17,27 +17,27 @@
     - debug:
         var=result_install
 
-    - name: Création du dossier /app_python sur la machine distante
+    - name: Création du dossier /app sur la machine distante
       file:
-        path: /app_python
+        path: /app
         state: directory
         mode: 0777
         owner: ec2-user
 
-    - name: Copier (faire un scp) l'archive sur le dossier remote /app_python
+    - name: Copier (faire un scp) l'archive sur le dossier remote /app
       copy:
         src: application.tar
-        dest: /app_python
+        dest: /app
         mode: 0644
 
-    - name: "Copier (faire un scp) le fichier local Dockerfile sur le dossier remote /app_python"
+    - name: "Copier (faire un scp) le fichier local Dockerfile sur le dossier remote /app"
       copy:
         src: Dockerfile
-        dest: /app_python
+        dest: /app
         mode: 0644
 
     - name: On genere l'image docker, on l'appelle formation/pytest:1.0
-      shell: cd /app_python && docker build -t formation/pytest:1.0 .
+      shell: cd /app && docker build -t formation/pytest:1.0 .
       #On prend tout ce qui est du stdout et on le met dans la variable result
       register: result
     - debug:
