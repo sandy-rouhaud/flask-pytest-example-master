@@ -42,7 +42,10 @@
       register: result
     - debug:
         var=result
-
+        
+   - name: On supprime le conteneur si existant
+      shell: docker rm -f conteneur_app
+      ignore_errors: tru
 
     - name: On execute le contenur de l'image docker formation/pytest:1.0
       shell: docker run -p 5000:5000 -d --rm --name conteneur_app formation/pytest:1.0
