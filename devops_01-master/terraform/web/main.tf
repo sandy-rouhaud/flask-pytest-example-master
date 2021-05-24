@@ -12,7 +12,7 @@ resource "aws_eip_association" "eip_assoc" {
 }
 
 
-resource "aws_instance" "groupe01" "aws_eip_association" "eip_assoc" {
+resource "aws_instance" "groupe01" {
     ami = "ami-00399ec92321828f5"
     instance_type = "t2.micro"
     key_name = "kp-groupe-1-CCSEC"
