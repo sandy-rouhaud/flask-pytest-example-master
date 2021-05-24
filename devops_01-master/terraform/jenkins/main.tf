@@ -11,6 +11,7 @@ resource "aws_instance" "groupe01" {
     instance_type = "t2.micro"
     key_name = "kp-groupe-1-CCSEC"
     vpc_security_group_ids = ["sg-03d0a94ec75785a93"]
+    vpc_id = "vpc-0504477353a32ecc1"
  
     tags = {
         Name = "${var.name}"
