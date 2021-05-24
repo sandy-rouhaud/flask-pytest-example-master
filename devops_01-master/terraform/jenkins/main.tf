@@ -12,6 +12,7 @@ resource "aws_instance" "groupe01" {
     key_name = "kp-groupe-1-CCSEC"
     vpc_security_group_ids = ["sg-03d0a94ec75785a93"]
     subnet_id = "subnet-08ac909c951e9226f"
+    allocation_id = "eipalloc-036ebd6ca5e2b187a"
  
     tags = {
         Name = "${var.name}"
