@@ -6,10 +6,10 @@ variable "name" {
     description = "Name the instance on deploy"
 }
 
-#resource "aws_eip_association" "eip_assoc" {
-#    instance_id   = "i-0b6a36c89863a1cec"
-#    allocation_id = "eipalloc-0ec6889136d977ec8"
-#}
+resource "aws_eip_association" "eip_assoc" {
+    instance_id   = "i-00c14ddcb9424156f"
+    allocation_id = "eipalloc-0ec6889136d977ec8"
+}
 
 resource "aws_instance" "groupe01" {
     ami = "ami-00399ec92321828f5"
