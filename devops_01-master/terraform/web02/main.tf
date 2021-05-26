@@ -6,10 +6,10 @@ variable "name" {
     description="Name of the web box at apply"
 }
 
-#resource "aws_eip_association" "eip_assoc" {
-#    instance_id   = "i-00d057c2a5de6a4db"
-#    allocation_id = "eipalloc-033da5f1d620db773"
-#}
+resource "aws_eip_association" "eip_assoc" {
+    instance_id   = "i-00d057c2a5de6a4db"
+    allocation_id = "eipalloc-033da5f1d620db773"
+}
 
 
 resource "aws_instance" "groupe01" {
