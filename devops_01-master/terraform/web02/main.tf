@@ -7,7 +7,7 @@ variable "name" {
 }
 
 resource "aws_eip_association" "eip_assoc" {
-    instance_id   = "i-00d057c2a5de6a4db"
+    instance_id   = "i-0c3afc0c48cac3b49"
     allocation_id = "eipalloc-033da5f1d620db773"
 }
 
