@@ -42,3 +42,5 @@
     - name: On supprime le conteneur si existant
       shell: docker rm -f hello_world
       ignore_errors: true
+      become: yes
+      
