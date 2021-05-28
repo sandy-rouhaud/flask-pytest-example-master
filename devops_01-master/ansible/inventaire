@@ -1,9 +1,12 @@
-[webservers]
-#ubuntu@3.22.201.34 ansible_ssh_private_key_file=~/.ssh/kp-groupe-1-CCSEC.pem
-#ubuntu@18.217.145.119 ansible_ssh_private_key_file=~/.ssh/kp-groupe-1-CCSEC.pem
-ec2-user@52.15.252.240 ansible_ssh_private_key_file=~/.ssh/kp-groupe-1-CCSEC.pem
-ec2-user@3.14.248.224 ansible_ssh_private_key_file=~/.ssh/kp-groupe-1-CCSEC.pem
 [jenkins]
-#ubuntu@3.141.99.93 ansible_ssh_private_key_file=~/.ssh/kp-groupe-1-CCSEC.pem
-#ubuntu@3.135.67.206 ansible_ssh_private_key_file=~/.ssh/kp-groupe-1-CCSEC.pem
-ubuntu@18.222.176.193 ansible_ssh_private_key_file=~/.ssh/kp-groupe-1-CCSEC.pem
+#ubuntu@3.141.99.93 ansible_ssh_private_key_file=~/.ssh/kp-groupe-1-CCSEC.pem		# jenkins01
+#ubuntu@3.135.67.206 ansible_ssh_private_key_file=~/.ssh/kp-groupe-1-CCSEC.pem 		# jenkins 02
+#ubuntu@18.116.82.20 ansible_ssh_private_key_file=~/.ssh/kp-groupe-1-CCSEC.pem	# jenkins 03
+
+[webservers]
+#ubuntu@3.22.201.34 ansible_ssh_private_key_file=~/.ssh/kp-groupe-1-CCSEC.pem		# web01
+#ubuntu@18.217.145.119 ansible_ssh_private_key_file=~/.ssh/kp-groupe-1-CCSEC.pem	# web02
+ec2-user@3.142.198.105 ansible_ssh_private_key_file=~/.ssh/kp-groupe-1-CCSEC.pem	# web03
+#ec2-user@3.14.248.224 ansible_ssh_private_key_file=~/.ssh/kp-groupe-1-CCSEC.pem	# web04
+
+
